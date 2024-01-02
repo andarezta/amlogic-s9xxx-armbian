@@ -16,69 +16,173 @@ on:
         type: choice
         options:
           - jammy
+          - lunar
+          - mantic
           - bullseye
+          - bookworm
+          - trixie
       armbian_board:
-        description: "Select Box Board."
+        description: "Select device board."
         required: false
         default: "s905x3"
         type: choice
         options:
           - all
-          - s922x_s905x3_s905d_s912_s905l3a
-          - rock5b_r66s_r68s_beikeyun_l1pro
+          - s905w_s905x_s905mb_s905l3b_s905x2_s905x3_s912_s922x_s922x-ct2000_s922x-reva
+          - s905x3-x88-pro-x3_s912-m8s-pro_s905x-t95_s912-t95z-plus_s905l3-unt400g1_s905lb-r3300l
+          - smart-am40_station-m1_sw799_tn3399_zysj_tvi3315a_xiaobao_zcube1-max
+          - vplus_tanix-tx6_tqc-a01
           - a311d
-          - s922x
-          - s922x-n2
-          - s905x3
-          - s905x3-b
-          - s905x2
-          - s912
-          - s912-m8s
-          - s905d
-          - s905d-ki
-          - s905x
-          - s905w
-          - s905
-          - s905l3a
-          - s905l2
-          - s905lb-r3300l
-          - rock5b
-          - h88k
-          - r66s
-          - r68s
+          - beikeyun
+          - chainedbox
+          - crrc
+          - dg3399
+          - dlfr100
+          - e25
+          - eaidk-610
+          - emb3531
+          - fine3399
+          - firefly-rk3399
+          - jp-tvbox
+          - h28k
           - h66k
           - h68k
-          - eaidk-610
+          - h69k
+          - h88k
+          - h88k-v3
+          - ipc-r
           - king3399
-          - beikeyun
-          - l1pro
+          - kylin3399
+          - leez
+          - nanopi-r5c
+          - nanopi-r5s
+          - panther-x2
+          - r66s
+          - r68s
+          - renegade-rk3328
+          - rock5b
+          - s905
+          - s905-beelink-mini
+          - s905-mxqpro-plus
+          - s905d
+          - s905d-ki-pro
+          - s905d-sml5442tw
+          - s905l
+          - s905l-mg101
+          - s905l2
+          - s905l2-e900v21e
+          - s905l2-wojia
+          - s905l3
+          - s905l3-cm211
+          - s905l3-unt400g1
+          - s905l3a
+          - s905l3a-cm311
+          - s905l3a-m401a
+          - s905l3b
+          - s905l3b-e900v22d
+          - s905l3b-e900v22e
+          - s905l3b-ip103h
+          - s905l3b-rg020et-ca
+          - s905l3b-unt403a
+          - s905lb-q96-mini
+          - s905lb-r3300l
+          - s905mb
+          - s905w
+          - s905w-w95
+          - s905w-x96-mini
+          - s905w-x96w
+          - s905x
+          - s905x-b860h
+          - s905x-nexbox-a95x
+          - s905x-t95
+          - s905x-tbee
+          - s905x-tx9
+          - s905x2
+          - s905x2-km3
+          - s905x2-x96max-2g
+          - s905x3
+          - s905x3-2101
+          - s905x3-a100
+          - s905x3-a95xf3
+          - s905x3-a95xf3-gb
+          - s905x3-b
+          - s905x3-h96max
+          - s905x3-hk1
+          - s905x3-ip1001m
+          - s905x3-q1
+          - s905x3-q2
+          - s905x3-tx3
+          - s905x3-tx3-bz
+          - s905x3-ugoosx3
+          - s905x3-whale
+          - s905x3-x88-pro-x3
+          - s905x3-x96air
+          - s905x3-x96air-gb
+          - s905x3-x96max
+          - s912
+          - s912-h96pro-plus
+          - s912-m8s-pro
+          - s912-nexbox-a1
+          - s912-nexbox-a2
+          - s912-phicomm-t1
+          - s912-t95z-plus
+          - s912-tx8-max
+          - s912-tx9-pro-2g
+          - s912-tx9-pro-3g
+          - s912-x92
+          - s912-zyxq-fake
+          - s922x
+          - s922x-ct2000
+          - s922x-gtking
+          - s922x-gtkingpro-h
+          - s922x-odroid-n2
+          - s922x-reva
+          - s922x-ugoos-am6
+          - smart-am40
+          - station-m1
+          - sw799
+          - tanix-tx6
+          - tn3399
+          - tqc-a01
+          - tvi3315a
+          - vplus
+          - xiaobao
+          - zcube1-max
+          - zysj
       armbian_kernel:
         description: "Select kernel version."
         required: false
         default: "6.1.1"
         type: choice
         options:
-          - 5.4.225_5.10.160_5.15.85
-          - 5.4.225_5.10.160
-          - 5.10.160_5.15.85
-          - 5.15.85_6.1.1
-          - 5.4.225
-          - 5.10.160
-          - 5.15.85
-          - 6.1.26
+          - 5.4.1_5.10.1
+          - 5.15.1_6.1.1
+          - 5.4.1
+          - 5.10.1
+          - 5.15.1
+          - 6.1.1
       auto_kernel:
         description: "Auto use the latest kernel."
         required: false
-        default: false
+        default: true
         type: boolean
       kernel_repo:
         description: "Set the kernel repository."
         required: false
-        default: "https://github.com/ophub/kernel/tree/main/pub"
-      armbian_size:
-        description: "Set armbian rootfs size(Unit: MiB)."
+        default: "ophub/kernel"
+        type: choice
+        options:
+          - ophub/kernel
+      kernel_usage:
+        description: "Set the tags of the stable kernel."
         required: false
-        default: "3000"
+        default: "stable"
+        type: choice
+        options:
+          - stable
+          - flippy
+          - dev
+          - beta
       armbian_fstype:
         description: "Select armbian rootfs type."
         required: false
@@ -87,13 +191,27 @@ on:
         options:
           - ext4
           - btrfs
-      armbian_sign:
-        description: "Set armbian custom name."
+      armbian_storage:
+        description: "Select image storage type."
         required: false
-        default: "-andarezta"
+        default: "save"
+        type: choice
+        options:
+          - save
+          - temp
+      builder_name:
+        description: "Set Armbian builder signature."
+        required: false
+        default: "andarezta"
+        type: choice
+        options:
+          - ophub
+          - angel
+          - andarezta
 
 env:
-  TZ: Asia/Jakarta
+  TZ: America/New_York
+  ROOTFS_SCRIPT: compile-kernel/tools/script/armbian_rootfs.sh
 
 jobs:
   build:
@@ -110,15 +228,16 @@ jobs:
           DEBIAN_FRONTEND: noninteractive
         run: |
           docker rmi `docker images -q`
+          [[ -n "${AGENT_TOOLSDIRECTORY}" ]] && sudo rm -rf "${AGENT_TOOLSDIRECTORY}"
           sudo rm -rf /usr/share/dotnet /etc/apt/sources.list.d /usr/local/lib/android 2>/dev/null
-          sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* adoptopenjdk* mongodb* dotnet* moby* snapd* || true
-          sudo -E apt-get -qq update -y
-          sudo -E apt-get -qq full-upgrade -y
-          sudo -E apt-get -qq install -y $(curl -fsSL https://is.gd/depend_ubuntu2204_armbian)
-          sudo -E apt-get -qq autoremove --purge
-          sudo -E apt-get -qq clean
+          sudo -E apt-get -y update
+          sudo -E apt-get -y purge azure-cli ghc* zulu* llvm* firefox google* dotnet* powershell openjdk* mongodb* moby* || true
+          sudo -E apt-get -y install $(curl -fsSL https://is.gd/depend_ubuntu2204_armbian)
+          sudo -E systemctl daemon-reload
+          #sudo -E apt-get -y full-upgrade
+          sudo -E apt-get -y autoremove --purge
+          sudo -E apt-get clean
           sudo timedatectl set-timezone "${TZ}"
-          echo "ARMBIAN_RELEASE=${{ inputs.set_release }}" >> ${GITHUB_ENV}
           echo "status=success" >> ${GITHUB_OUTPUT}
 
       - name: Download source code
@@ -126,46 +245,45 @@ jobs:
         if: ${{ steps.init.outputs.status }} == 'success' && !cancelled()
         run: |
           df -hT ${PWD}
-          git clone -q --single-branch --depth 1 -b v22.11 https://github.com/armbian/build.git build
+          git clone -q --single-branch --depth=1 --branch=v23.08 https://github.com/armbian/build.git build
           echo "status=success" >> ${GITHUB_OUTPUT}
 
-      - name: Compile Armbian [ ${{ env.ARMBIAN_RELEASE }} ]
+      - name: Compile Armbian [ ${{ inputs.set_release }} ]
         id: compile
         if: ${{ steps.down.outputs.status }} == 'success' && !cancelled()
         run: |
           # Compile method and parameter description: https://docs.armbian.com/Developer-Guide_Build-Options
           cd build/
-          sudo ./compile.sh RELEASE=${{ env.ARMBIAN_RELEASE }} BOARD=odroidn2 BRANCH=current BUILD_ONLY=default HOST=armbian EXPERT=yes \
-                            BUILD_DESKTOP=no BUILD_MINIMAL=no KERNEL_CONFIGURE=no CLEAN_LEVEL="make,debs" COMPRESS_OUTPUTIMAGE="sha"
-          echo "build_tag=Armbian_${{ env.ARMBIAN_RELEASE }}_$(date +"%m.%d.%H%M")" >> ${GITHUB_OUTPUT}
+              ./compile.sh RELEASE=${{ inputs.set_release }} BOARD=odroidn2 BRANCH=current BUILD_MINIMAL=no \
+                           BUILD_ONLY=default HOST=armbian BUILD_DESKTOP=no EXPERT=yes KERNEL_CONFIGURE=no \
+                           COMPRESS_OUTPUTIMAGE="sha" SHARE_LOG=yes
           echo "status=success" >> ${GITHUB_OUTPUT}
 
-      - name: Clean up server space
+      - name: Organize files and clear space
+        id: clean
         if: ${{ steps.compile.outputs.status }} == 'success' && !cancelled()
         run: |
-          cd build/
-            sudo rm -rf $(ls . | grep -v "^output$" | xargs) 2>/dev/null
-          cd output/images/
-            img_name="$(ls *.img | head -n 1)"
-            img_version="$(echo ${img_name} | grep -oE '[2-9][2-9]\.[0-9]{1,2}\.[0-9]{1,2}' | head -n 1)"
-            img_kernel="$(echo ${img_name} | grep -oE '[5-9]\.[0-9]{1,2}\.[0-9]{1,3}' | head -n 1)"
-            sudo mv -f ${img_name} Armbian_${img_version}-trunk_${img_kernel}.img
-            sudo pigz -f *.img && sync
-            sudo rm -rf $(ls . | grep -v ".img.gz" | xargs) 2>/dev/null
-            df -hT ${PWD}
+          # Organize and keep essential files, delete unnecessary files
+          chmod +x ${ROOTFS_SCRIPT}
+          ${ROOTFS_SCRIPT} -v ${{ inputs.set_release }}
+
+          # Output cleaning result information
+          df -hT ${PWD}
+          echo "build_tag=Armbian_${{ inputs.set_release }}_${{ inputs.armbian_storage }}_$(date +"%Y.%m")" >> ${GITHUB_OUTPUT}
+          echo "status=success" >> ${GITHUB_OUTPUT}
 
       - name: Upload Armbian image to Release
         uses: ncipollo/release-action@main
-        if: ${{ steps.compile.outputs.status }} == 'success' && !cancelled()
+        if: ${{ steps.clean.outputs.status }} == 'success' && !cancelled()
         with:
-          tag: ${{ steps.compile.outputs.build_tag }}
-          artifacts: build/output/images/*.img.gz
+          tag: ${{ steps.clean.outputs.build_tag }}
+          artifacts: build/output/images/*
           allowUpdates: true
           token: ${{ secrets.GH_TOKEN }}
 
       - name: Rebuild Armbian
         uses: ophub/amlogic-s9xxx-armbian@main
-        if: ${{ steps.compile.outputs.status }} == 'success' && !cancelled()
+        if: ${{ steps.clean.outputs.status }} == 'success' && !cancelled()
         with:
           build_target: armbian
           armbian_path: build/output/images/*.img.gz
@@ -173,23 +291,25 @@ jobs:
           armbian_kernel: ${{ inputs.armbian_kernel }}
           auto_kernel: ${{ inputs.auto_kernel }}
           kernel_repo: ${{ inputs.kernel_repo }}
-          armbian_size: ${{ inputs.armbian_size }}
+          kernel_usage: ${{ inputs.kernel_usage }}
           armbian_fstype: ${{ inputs.armbian_fstype }}
-          armbian_sign: ${{ inputs.armbian_sign }}
-          gh_token: ${{ secrets.GH_TOKEN }}
+          builder_name: ${{ inputs.builder_name }}
 
       - name: Upload Rebuild image to Release
         uses: ncipollo/release-action@main
         if: ${{ env.PACKAGED_STATUS }} == 'success' && !cancelled()
         with:
-          tag: ${{ steps.compile.outputs.build_tag }}
+          tag: ${{ steps.clean.outputs.build_tag }}
           artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
           allowUpdates: true
+          removeArtifacts: false
+          replacesArtifacts: true
           token: ${{ secrets.GH_TOKEN }}
           body: |
-            These are the Armbian OS image
-            * OS information
-            Default username: root
-            Default password: 1234
-            Install command: armbian-install
-            Update command: armbian-update
+            ### Armbian Image information
+            - Default username: root
+            - Default password: 1234
+            - Install command: armbian-install
+            - Update command: armbian-update
+            ### Armbian Image Verification
+            - sha256sum
