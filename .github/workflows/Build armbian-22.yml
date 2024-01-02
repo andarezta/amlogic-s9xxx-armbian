@@ -152,19 +152,19 @@ on:
       armbian_kernel:
         description: "Select kernel version."
         required: false
-        default: "6.1.1"
+        default: "5.15.109"
         type: choice
         options:
           - 5.4.1_5.10.1
           - 5.15.1_6.1.1
           - 5.4.1
           - 5.10.1
-          - 5.15.1
+          - 5.15.109
           - 6.1.1
       auto_kernel:
         description: "Auto use the latest kernel."
         required: false
-        default: true
+        default: false
         type: boolean
       kernel_repo:
         description: "Set the kernel repository."
@@ -210,7 +210,7 @@ on:
           - andarezta
 
 env:
-  TZ: America/New_York
+  TZ: Asia/Jakarta
   ROOTFS_SCRIPT: compile-kernel/tools/script/armbian_rootfs.sh
 
 jobs:
