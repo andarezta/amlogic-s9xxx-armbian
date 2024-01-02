@@ -199,10 +199,10 @@ on:
         options:
           - ophub
           - angel
-          - yourname
+          - andarezta
 
 env:
-  TZ: America/New_York
+  TZ: Asia/Jakarta
 
 jobs:
   build:
@@ -233,6 +233,7 @@ jobs:
           armbian_url="${{ inputs.armbian_url }}"
           if  [[ -z "${armbian_url}" ]]; then
               armbian_site="https://armbian.tnahosting.net/dl/odroidn2/archive/"
+              # armbian_site="https://armbian.tnahosting.net/archive/odroidn2/archive/"
               armbian_name="Armbian.*jammy.*.img.xz"
               armbian_file=$(curl -s "${armbian_site}" | grep -oE "${armbian_name}" | head -n 1)
               if [[ -n "${armbian_file}" ]]; then
