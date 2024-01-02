@@ -886,7 +886,7 @@ refactor_rootfs() {
     ln -sf /usr/sbin sbin
     ln -sf /run/lock var/lock
     ln -sf /run var/run
-    ln -sf /usr/share/zoneinfo/Asia/Shanghai etc/localtime
+    ln -sf /usr/share/zoneinfo/Asia/Jakarta etc/localtime
     ln -sf /usr/sbin/armbian-ddbr usr/sbin/ddbr
 
     # Fix common releases permissions
@@ -950,8 +950,8 @@ refactor_rootfs() {
     # Adjust the default timeout for service start/stop
     system_conf="etc/systemd/system.conf"
     [[ -f "${system_conf}" ]] && {
-        sed -i "s|^#*DefaultTimeoutStartSec.*|DefaultTimeoutStartSec=10s|g" ${system_conf}
-        sed -i "s|^#*DefaultTimeoutStopSec.*|DefaultTimeoutStopSec=10s|g" ${system_conf}
+        sed -i "s|^#*DefaultTimeoutStartSec.*|DefaultTimeoutStartSec=15s|g" ${system_conf}
+        sed -i "s|^#*DefaultTimeoutStopSec.*|DefaultTimeoutStopSec=15s|g" ${system_conf}
     }
 
     # Disable tips of the day for [ /etc/update-motd.d/35-armbian-tips ]
