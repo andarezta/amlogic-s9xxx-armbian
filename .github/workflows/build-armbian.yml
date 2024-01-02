@@ -210,7 +210,7 @@ on:
           - andarezta
 
 env:
-  TZ: America/New_York
+  TZ: Asia/Jakarta
   ROOTFS_SCRIPT: compile-kernel/tools/script/armbian_rootfs.sh
 
 jobs:
@@ -245,7 +245,7 @@ jobs:
         if: ${{ steps.init.outputs.status }} == 'success' && !cancelled()
         run: |
           df -hT ${PWD}
-          git clone -q --single-branch --depth=1 --branch=v22.11 https://github.com/armbian/build.git build
+          git clone -q --single-branch --depth=1 --branch=v22.05 https://github.com/armbian/build.git build
           echo "status=success" >> ${GITHUB_OUTPUT}
 
       - name: Compile Armbian [ ${{ inputs.set_release }} ]
