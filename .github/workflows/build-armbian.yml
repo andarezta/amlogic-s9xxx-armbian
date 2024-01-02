@@ -207,7 +207,7 @@ on:
         options:
           - ophub
           - angel
-          - yourname
+          - andarezta
 
 env:
   TZ: America/New_York
