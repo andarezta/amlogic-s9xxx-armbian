@@ -17,7 +17,7 @@ on:
         type: choice
         options:
           - unifreq
-          - raspberrypi/linux@rpi-5.10.y
+          - gregkh/linux@linux@linux-5.10.y
       kernel_version:
         description: "Select kernel version"
         required: false
