@@ -53,11 +53,11 @@ on:
       kernel_sign:
         description: "Set the kernel custom signature"
         required: false
-        default: "-ophub"
+        default: "andarezta"
         type: choice
         options:
           - -ophub
-          - -yourname
+          - andarezta
 
 env:
   TZ: America/New_York
