@@ -12,11 +12,11 @@ on:
       set_branch:
         description: "Branch: edge / current / legacy"
         required: false
-        default: "edge"
+        default: "current"
       set_release:
         description: "Release: jammy / focal / bullseye"
         required: false
-        default: "jammy"
+        default: "bullseye"
       set_board:
         description: "Board: odroidn2 / lepotato"
         required: false
@@ -24,11 +24,11 @@ on:
       armbian_soc:
         description: "Set Amlogic SoC."
         required: false
-        default: "all"
+        default: "s905x3"
       armbian_kernel:
         description: "Set kernel version."
         required: false
-        default: "5.15.25_5.10.100"
+        default: "5.10.1"
       armbian_size:
         description: "Set armbian rootfs size."
         required: false
@@ -41,7 +41,7 @@ on:
     #- cron: "0 17 * * 0"
 
 env:
-  TZ: Asia/Shanghai
+  TZ: Asia/Jakarta
 
 jobs:
   build:
@@ -90,7 +90,7 @@ jobs:
       - name: Download source code
         id: down
         run: |
-          git clone --depth 1 https://github.com/armbian/v22.11/build.git
+          git clone -q --single-branch --depth=1 --branch=v22.11 https://github.com/armbian/build.git build
 
       - name: Compile Armbian [ ${{ env.ARMBIAN_BOARD }} ]
         id: compile
